@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Inteligente de Produtos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <!-- header: elemento semântico que representa o cabeçalho do site -->
+        <img id="logo" src="imagens/logotipo.png" alt="Banner do catálogo de produtos">
+        <h1>Catálogo Inteligente de Produtos</h1>
+    </header>
+    <main>
+        <!-- main: área principal do conteúdo, com o formulário e os resultados do catálogo -->
+        <section aria-labelledby="produto-form-title">
+            <!-- section: agrupa o formulário de seleção de produtos -->
+            <h2 id="produto-form-title">Selecione um produto</h2>
+            <form id="produtoForm">
+                <label for="produtoSelect">Selecione um produto:</label>
+                <select id="produtoSelect">
+                    <option value="">-- Escolha um produto --</option>
+                    <option value="laptop">Laptop</option>
+                    <option value="smartphone">Smartphone</option>
+                    <option value="tablet">Tablet</option>
+                    <option value="fone">Fone de Ouvido</option>
+                    <option value="mouse">Mouse</option>
+                    <option value="teclado">Teclado</option>
+                    <option value="monitor">Monitor</option>
+                    <option value="impressora">Impressora</option>
+                </select>
+                <button type="button" onclick="verProduto()">Ver Produto</button>
+                <button type="button" onclick="limpar()">Limpar</button>
+            </form>
+        </section>
+
+        <section id="mensagem" class="mensagem" aria-live="polite">
+            <!-- section: espaço para mensagens de validação e instruções -->
+        </section>
+
+        <section id="produtoInfo" aria-labelledby="nomeProduto">
+            <!-- section: área onde as informações do produto selecionado são exibidas -->
+            <h2 id="nomeProduto"></h2>
+            <p id="descricaoProduto"></p>
+            <p id="precoProduto"></p>
+            <img id="imagem" src="imagens/padrao.png" alt="Imagem do produto selecionado">
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
